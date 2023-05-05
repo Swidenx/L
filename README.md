@@ -64,6 +64,6 @@ botonConsult.grid(row= , column= )
 resultBotonQuest= tk.Button(ventana3, text=" ")
 resultadoBotonConsult= tk.Button(ventana3, text=" ")
 ventana4 = tk.Tk()
-#1-5 Stars
+#1-(5 Stars)
 resultBotonCalificationOfStars= tk.Button(ventana4, text="Stars")
                                                                                
