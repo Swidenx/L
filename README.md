@@ -1,69 +1,105 @@
-import os
-import tkinter as tk
-import re
-def S():
-if os.path.isfile("archivos.txt"):
-    archivoTexto=open("archivos.txt", "r+"):
-    print("Digito nombre del beneficiario, identificacion y numero de telefono")
-    nombre=input()
-    identificacion=input()
-    numero=input()
-    lineasTexto=archivoTexto.readlines()
-    for elementos in lineasTexto:
-        # Busqueda por elemento completo
-        while re.search(identificacion, elemntos):
-            print("La identificacion ya existe,intente de nuevo")
-            nombre=input()
-            identificacion=input()
-            numero=input()
-        archivoTexto.write(nombre + " ")
-        archivoTexto.write(identificacion + " ")
-        archivoTexto.write(numero + "\n")
-        achivoTexto.close()
-else:
-    archivoTexto=open("archivos.txt","w")
-    print("Digito nombre del beneficiario, identificacion y numero de telefono")
-    nombre=input()
-    identificacion=input()
-    numero=input()
-    archivoTexto.write(nombre + " ")
-    archivoTexto.write(identificacion + " ")
-    archivoTexto.write(numero + "\n")
-    achivoTexto.close()
-print("Ingrese el nombre del beneficiario para buscarlo") 
-letra=input()
-# Busqueda por letra
-for elementos in lineasTexto:
-    if re.findall(letra, elemento):
-        print(elemento)
+public class Ordenamiento {
+    
+    public void intercambio(int vector[]){
+        for (int i =0;i < vector.length;i++){
+            for (int j=i+1 ; j<vector.length;j++){
+                if(vector[i]>vector[j]){
+                    int aux= vector[i];
+                    vector[i]= vector[j];
+                    vector[j]= aux;
+                }
 
-ventana = tk.Tk()
-#entrada1 = tk.Entry(ventana)
-#entrada2 = tk.Entry(ventana)
-#entrada3 = tk.Entry(ventana)
-resultado = tk.Label(ventana, text="a")
-#entrada1.grid(row=2, column=0)
-#entrada2.grid(row=2, column=1)
-#entrada3.grid(row=2, column=2)
-botonOp1.grid(row= , column= )
-botonOp2.grid(row= ,column= )
-botonOp3.grid(row= ,column= )#Consult
-resultBotonOp1= tk.Button(ventana, text=" ")
-resultBotonOp2= tk.Button(ventana, text=" ")
-resultBotonOp3=tk.Button(ventana, text=" " )#Consult
-ventana2 = tk.Tk()
-botonOp11.grid(row= , column= )
-botonOp12.grid(row= , column= )
-botonOp13.grid(row= , column= )
-resultBotonOp11= tk.Button(ventana2, text=" ")
-resultBotonOp12= tk.Button(ventana2, text=" ")
-resultBotonOp13= tk.Button(ventana2, text=" ")
-ventana3 = tk.Tk()
-botonQuest.grid(row= , column= )
-botonConsult.grid(row= , column= )
-resultBotonQuest= tk.Button(ventana3, text=" ")
-resultadoBotonConsult= tk.Button(ventana3, text=" ")
-ventana4 = tk.Tk()
-#1-(5 Stars)
-resultBotonCalificationOfStars= tk.Button(ventana4, text="Stars")
-                                                                               
+            }
+
+            
+        }
+        
+    }
+
+    public void seleccion(int vector[]){
+        
+        for (int i =0 ;i <original.length;i++){
+            for (int j=i+1;j<original.length;j++){
+                if(vector[i]>vector[j]){
+                    vector[i]= vector[j];
+                    vector[j]= aux;
+                    
+                }
+                
+            }
+        }
+    }
+  
+}
+
+
+public class App {
+
+    public static void main(String[] args) throws Exception {
+
+        Ordenamiento ord = new Ordenamiento(); 
+
+        int[] original = VectorUtil.generar(10);
+
+        VectorUtil.imprimirVector(original);
+
+        int v[]= VectorUtil.clonar(original);
+
+        ord.intercambio(v);
+
+
+        VectorUtil.imprimirVector(v);
+        System.out.println();
+
+        int v1[]= VectorUtil.clonar(original);
+
+        ord.seleccion(v1);
+        System.out.println();
+
+        VectorUtil.imprimirVector(v1);
+        
+
+    
+    }
+}
+
+
+
+
+
+
+import java.util.Random;
+
+public class VectorUtil {
+
+    public static int[] generar(int tamanio){
+        Random rnd = new Random();
+        
+        int vector[] = new int[tamanio];
+        for(int i = 0; i < tamanio; i++){
+            vector[i] = rnd.nextInt(100);
+        }
+        return vector;
+    }
+
+    public static void imprimirVector(int vector[]){
+        for(int j= 0; j < vector.length; j++){
+            System.out.print(vector[j] + " ");
+        }
+        System.out.println();
+    }
+    public static int[] clonar(int original[]){
+        int clon[]= new int [original.length];
+        for (int i =0 ;i <original.length;i++){
+        clon[i]=original[i];
+        }
+        return clon;
+
+
+    }
+
+    
+}
+
+
+
